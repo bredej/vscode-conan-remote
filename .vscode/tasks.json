@@ -1,0 +1,23 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "conan install",
+            "type": "shell",
+            "command": "conan install . -if build -b missing -s build_type=Debug -s compiler.libcxx=libstdc++11"
+        },
+        {
+            "label": "conan build",
+            "type": "shell",
+            "command": "conan build ..",
+            "options": {
+                "cwd": "${workspaceRoot}/build"
+            },
+            "dependsOn": ["conan install"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}

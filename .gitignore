@@ -1,0 +1,6 @@
+[Bb]uild*/
+[Rr]elease/
+[Dd]ebug/
+
+CMakeFiles/
+.bash_history
